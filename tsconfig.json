@@ -7,11 +7,12 @@
     "skipLibCheck": true, // 跳过对 .d.ts 文件的类型检查
     "baseUrl": "./", //查询的基础路径
     "paths": {
-      "@src/*": ["./src/*"],
+      "@/*": ["./src/*"],
       "@api/*": ["./src/api"],
       "@components/*": ["./src/components/*"],
+      "@views/*": ["./src/views/*"],
       "@utils/*": ["./src/utils/*"],
-      "@styles": ["./src/styles"]
+      "@types": ["./src/types"]
     }, //路径映射,配合别名使用
 
     /* Bundler mode */
