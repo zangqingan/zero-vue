@@ -18,6 +18,7 @@
     /* Bundler mode */
     "moduleResolution": "bundler", // 使用 bundler 的模块解析策略
     "allowImportingTsExtensions": true, //允允许 TypeScript 文件使用特定于 TypeScript 的扩展名（如 .ts、.mts 或 .tsx）相互导入。
+    "allowJs": true,
     "resolveJsonModule": true, // 允许引入 JSON 文件
     "isolatedModules": true, // 要求所有文件都是 ES Module 模块。
     "noEmit": true, // 不输出文件,即编译后不会生成任何js文件
