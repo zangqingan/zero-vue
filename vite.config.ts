@@ -1,10 +1,17 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path"; // path用到了 @types/node 这个包所以要安装
+import EslintPlugin from "vite-plugin-eslint"; // 配置eslint检验范围
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    EslintPlugin({
+      include: ["src/**/*.js", "src/**/*.ts", "src/**/*.vue"],
+      exclude: ["./node_modules"],
+    }),
+  ],
   //这里进行配置别名
   resolve: {
     alias: {

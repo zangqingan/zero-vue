@@ -7,7 +7,7 @@ module.exports = {
   // 此项是用来配置标准的js风格，就是说写代码的时候要规范的写.（继承别人已经写好的包）
   extends: [
     "standard-with-typescript",
-    "plugin:vue/vue3-essential",
+    "plugin:vue/vue3-essential", //vue3支持
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
@@ -24,10 +24,7 @@ module.exports = {
   // 此项是自己自定义的规则
   rules: {
     "handle-callback-err": "off",
-    "vue/valid-define-emits": "off",
     "no-unused-vars": "off",
-    "vue/no-unused-vars": "off",
-    "vue/no-mutating-props": "off",
     "prettier/prettier": [
       "error",
       {
@@ -43,10 +40,20 @@ module.exports = {
         bracketSameLine: true, // 多属性html标签的‘>’不折行放置
       },
     ],
+    "vue/no-unused-vars": "off",
+    "vue/no-mutating-props": "off",
+    "vue/valid-define-emits": "off",
     "vue/multi-word-component-names": "off",
-    "vue/html-closing-bracket-newline": "off",
-    "vue/singleline-html-element-content-newline": "off",
-    "vue/multiline-html-element-content-newline": "off",
+    "vue/html-closing-bracket-newline": "off", // 不强制换行
+    "vue/singleline-html-element-content-newline": "off", // 不强制换行
+    "vue/multiline-html-element-content-newline": "off", // 不强制换行
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        singleline: { max: 5 },
+        multiline: { max: 5 },
+      },
+    ], // vue template模板元素第一行最多5个属性
     "vue/no-v-html": "off",
     "vue/require-prop-types": "off",
     "vue/no-unused-components": 1,
@@ -116,6 +123,7 @@ module.exports = {
       },
     ],
     "new-parens": 2,
+    "no-var": "error", // 禁止使用 var
     "no-array-constructor": "off",
     "no-prototype-builtins": "off",
     "no-caller": 2,
@@ -155,7 +163,7 @@ module.exports = {
       },
     ],
     "no-lone-blocks": 2,
-    "no-mixed-spaces-and-tabs": 2,
+    "no-mixed-spaces-and-tabs": 2, // 不能空格与tab混用
     "no-multi-spaces": 2,
     "no-multi-str": 2,
     "no-multiple-empty-lines": [
@@ -222,14 +230,15 @@ module.exports = {
     ],
     "padded-blocks": [2, "never"],
     quotes: [
-      1,
+      // 使用单引号
+      2,
       "single",
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
       },
     ],
-    semi: [1, "never"],
+    semi: [2, "never"], // 禁止尾部使用分号“ ; ”
     "semi-spacing": [
       1,
       {
