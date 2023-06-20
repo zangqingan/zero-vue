@@ -31,6 +31,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off', // 不鼓励使用三斜线,关掉这个规则
     '@typescript-eslint/no-unsafe-argument': 'off',
+    '@typescript-eslint/promise-function-async': 'off',
     '@typescript-eslint/unbound-method': 'off',
     'handle-callback-err': 'off',
     'no-unused-vars': 'off',
