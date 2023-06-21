@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// 测试mock
+import { getUserInfo } from '@api/user/index.js'
 // 测试pinia是否成功初始化
 import useUserStore from '@/store/modules/user' // 引入store
 import useGenderStore from '@/store/modules/gender'
@@ -31,6 +33,17 @@ const { updateGender } = genderStore
 const handleGender = () => {
   updateGender()
 }
+
+// 获取用户数据
+const getUserInfoList = async () => {
+  try {
+    const res = await getUserInfo()
+    console.log('res', res)
+  } catch (error) {
+    Promise.reject(error)
+  }
+}
+getUserInfoList()
 </script>
 
 <template>

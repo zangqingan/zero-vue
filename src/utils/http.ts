@@ -1,8 +1,10 @@
 // 1.引入axios
 import axios from 'axios'
-
+import type { AxiosInstance } from 'axios'
 // 2.创建axios实例
-const instance = axios.create({ baseURL: import.meta.env.VITE_APP_BASE_API })
+const instance: AxiosInstance = axios.create({
+  baseURL: '/api'
+})
 
 // 配置请求拦截器
 instance.interceptors.request.use(
@@ -22,7 +24,7 @@ instance.interceptors.response.use(
     return Promise.resolve(res.data)
   },
   error => {
-    console.log('err' + error)
+    console.log('err', error)
     return Promise.reject(error)
   }
 )

@@ -2,9 +2,9 @@
 import instance from '@utils/http'
 
 // 定义一个获取用户列表接口
-export const getUserInfo = () => {
+export function getUserInfo() {
   return instance({
-    url: 'system/user/info',
+    url: '/getUserInfo',
     method: 'get'
   })
 }
