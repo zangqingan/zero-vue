@@ -1,4 +1,4 @@
-import { createProdMockServer } from 'vite-plugin-mock/client'
+import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer'
 
 // 获取mock目录下所有的 .ts文件
 const modules: Record<string, any> = import.meta.glob('../../mock/**/*.ts', {
