@@ -1,10 +1,9 @@
 <template>
-  <div>home</div>
-  <HelloWorld msg="Vite + Vue" />
+  <div>
+    <div>home</div>
+  </div>
 </template>
 
-<script setup>
-import HelloWorld from '../../components/HelloWorld.vue'
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>

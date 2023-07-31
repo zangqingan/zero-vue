@@ -16,9 +16,14 @@ export default defineConfig(({ mode, command }) => {
       }),
       // 配置mock
       viteMockServe({
-        // https://github.com/vbenjs/vite-plugin-mock
-        mockPath: 'mock' //指定mock文件存放位置
-        // enable: true //是否启用 mock 功能
+        mockPath: 'mock',
+        localEnabled: command === 'serve',
+        prodEnabled: command !== 'serve' && true,
+        // 这样可以控制关闭mock的时候不让mock打包到最终代码内
+        injectCode: `
+          import { setupProdMockServer } from '../mock/mockProdServer';
+          setupProdMockServer();
+        `
       })
     ],
     //这里进行配置别名
