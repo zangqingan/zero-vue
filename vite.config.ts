@@ -16,7 +16,7 @@ export default defineConfig(({ mode, command }) => {
       }),
       // 配置mock
       viteMockServe({
-        mockPath: 'mock',
+        mockPath: './mock',
         localEnabled: command === 'serve',
         prodEnabled: command !== 'serve' && true,
         // 这样可以控制关闭mock的时候不让mock打包到最终代码内
@@ -29,12 +29,7 @@ export default defineConfig(({ mode, command }) => {
     //这里进行配置别名
     resolve: {
       alias: {
-        '@': path.resolve('./src'), // @代替./src
-        '@api': path.resolve('./src/api'), // @api代替./src/api
-        '@components': path.resolve('./src/components'), // @components代替./src/components
-        '@views': path.resolve('./src/views'), // @views代替../src/views
-        '@utils': path.resolve('./src/utils'), // @utils代替./src/utils
-        '@types': path.resolve('./src/types') // @types代替./src/types
+        '@': path.resolve('./src') // @代替./src
       }
     },
     // 配置反向代理
@@ -42,10 +37,10 @@ export default defineConfig(({ mode, command }) => {
       port: 3000,
       proxy: {
         '/api': {
-          target: 'http://localhost', // 后台服务器地址
+          target: 'http://localhost:3000', // 后台服务器地址
           changeOrigin: true, // 是否允许不同源
           secure: false, // 支持https
-          rewrite: path => path.replace(/^\/api/, '/api')
+          rewrite: path => path.replace(/^\/api/, '')
         }
       }
     }

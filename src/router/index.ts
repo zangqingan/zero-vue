@@ -9,15 +9,15 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('@views/home/home.vue')
+      component: () => import('@/views/home/home.vue')
     },
     {
       path: '/login',
-      component: () => import('@views/login/login.vue') // 路由懒加载
+      component: () => import('@/views/login/login.vue') // 路由懒加载
     },
     {
       path: '/home',
-      component: () => import('@views/home/home.vue')
+      component: () => import('@/views/home/home.vue')
     }
   ]
 })

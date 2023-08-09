@@ -7,12 +7,7 @@
     "skipLibCheck": true, // 跳过对 .d.ts 文件的类型检查
     "baseUrl": "./", //查询的基础路径
     "paths": {
-      "@/*": ["./src/*"],
-      "@api/*": ["./src/api/*"],
-      "@components/*": ["./src/components/*"],
-      "@views/*": ["./src/views/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@types": ["./src/types/*"]
+      "@/*": ["./src/*"]
     }, //路径映射,配合别名使用
 
     /* Bundler mode */
@@ -30,7 +25,13 @@
     "noUnusedParameters": true, //报告函数中未使用参数的错误
     "noFallthroughCasesInSwitch": true //确保switch语句中的任何非空情况都包含
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/utils/mockProdServer.ts"], //需要检测的文件
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/utils/mockProdServer.ts"
+  ], //需要检测的文件
   "exclude": ["node_modules", "dist", "build"], //不需要检测的文件
   "references": [{ "path": "./tsconfig.node.json" }] //为文件进行不同配置
 }
