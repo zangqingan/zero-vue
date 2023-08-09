@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './assets/styles/index.scss'
 import App from './App.vue'
 import router from './router' // 引入路由
 import store from './store' // 引入全局状态管理器pinia
